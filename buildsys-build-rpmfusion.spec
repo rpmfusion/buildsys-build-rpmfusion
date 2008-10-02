@@ -36,7 +36,7 @@ building kmod-packages.
 %package        kerneldevpkgs-current
 Summary:        Meta-package to get all current kernel-devel packages into the buildroot
 Group:          Development/Tools
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-kerneldevpkgs-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-kerneldevpkgs-current-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-kerneldevpkgs-newest-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
@@ -58,7 +58,7 @@ kmods against them.
 
 %prep
 # for debugging purposes output the stuff we use during the rpm generation
-bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}-  | grep -v '^Requires'
+bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}-
 sleep 2
 
 
