@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        10
-Release:        0.1
+Release:        0.2
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -45,7 +45,7 @@ Requires:       %{_bindir}/kmodtool
 BuildRequires:  %{_bindir}/kmodtool
 
 # we use our own magic here to safe ourself to cut'n'paste the BR
-%{expand:%(bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
+%{expand:%(bash %{SOURCE2} --current --requires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
 
 %description kerneldevpkgs-current
 This is a meta-package used by the buildsystem to track the kernel-devel
@@ -58,7 +58,7 @@ kmods against them.
 
 %prep
 # for debugging purposes output the stuff we use during the rpm generation
-bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}-
+bash %{SOURCE2} --current --requires --prefix %{_sourcedir}/%{name}-
 sleep 2
 
 
@@ -73,6 +73,7 @@ mkdir -p $RPM_BUILD_ROOT/%{_datadir}/%{name} $RPM_BUILD_ROOT/%{_bindir} .tmp/new
 # install the stuff we need
 install -p -m 0755 %{SOURCE2}  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
 install -p -m 0644 %{SOURCE5}  .tmp/current/README
+ln -s kerneldevpkgs-current $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-newest
 install -p -m 0644 %{SOURCE11} $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-current
 install -p -m 0644 %{SOURCE20} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i586
 install -p -m 0644 %{SOURCE21} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i686
@@ -97,7 +98,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Sun May 04 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.1
+* Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.2
+- don't use the --buildrequires stuff, doesn't work in plague/mock
+- provide compatible symlink for "newest"
+
+* Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.1
 - adjust things for rawhide
 -- no xen kernels anymore, so no need for the whole newest and current handling
 -- just require kernels unversioned if buildsys-build-rpmfusion-kerneldevpkgs
