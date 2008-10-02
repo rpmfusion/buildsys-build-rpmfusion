@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        10
-Release:        0.2
+Release:        0.3
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -18,6 +18,7 @@ Source20:       %{name}-filterfile_i586
 Source21:       %{name}-filterfile_i686
 Source22:       %{name}-filterfile_x86_64
 Source23:       %{name}-filterfile_ppc
+Source24:       %{name}-filterfile_ppc64
 
 # provide this to avoid a error when generating akmods packages
 Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
@@ -79,6 +80,7 @@ install -p -m 0644 %{SOURCE20} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i5
 install -p -m 0644 %{SOURCE21} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i686
 install -p -m 0644 %{SOURCE22} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_x86_64
 install -p -m 0644 %{SOURCE23} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_ppc
+install -p -m 0644 %{SOURCE24} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_ppc64
 
 
 # adjust default-path
@@ -98,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.3
+- install filterfile for ppc64
+
 * Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.2
 - don't use the --buildrequires stuff, doesn't work in plague/mock
 - provide compatible symlink for "newest"
