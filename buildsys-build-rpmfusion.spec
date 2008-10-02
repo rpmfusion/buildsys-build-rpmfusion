@@ -24,7 +24,7 @@ Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
 
 # rpmlint will complain this should be a noarch package; but for
 #  proper builddeps deps it needs to be a non-noarch package
-ExclusiveArch:  i586 i686 x86_64 ppc
+ExclusiveArch:  i586 i686 x86_64 ppc ppc64
 
 # unneeded
 %define debug_package %{nil}
