@@ -100,11 +100,11 @@ print_kernels ()
 				fi
 			else
 				if [[ "${requires}" ]]; then
-					echo "Requires: kernel-devel-uname-r = ${this_kernel}"
+					echo "Requires: kernel-devel-uname-r = ${this_kernel}.${this_target}"
 				fi
 	
 				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel}"
+					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel}.${this_target}"
 				fi
 			fi
 		else
