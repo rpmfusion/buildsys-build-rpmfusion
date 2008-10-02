@@ -86,7 +86,7 @@ print_kernels ()
 
 	# go
 	${this_command} ${this_grepoptions} ${this_kernellistfiles} | while read this_kernel; do 
-		this_kernel_verrel=${this_kernel%%-$kernels_known_variants}
+		this_kernel_verrel=${this_kernel%%$kernels_known_variants}
 		this_kernel_variant=${this_kernel##$this_kernel_verrel}
 
 		if [[ "${requires}" ]]  || [[ "${buildrequires}" ]]; then
@@ -100,11 +100,11 @@ print_kernels ()
 				fi
 			else
 				if [[ "${requires}" ]]; then
-					echo "Requires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant##-}}"
+					echo "Requires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
 				fi
 	
 				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant##-}}"
+					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
 				fi
 			fi
 		else
