@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          9
 Version:        9.1
-Release:        14
+Release:        15
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -126,6 +126,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Oct 03 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 9.1-15
+- no xen kernels on ppc, ppc64
+
 * Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 9.1-14
 - install filterfile for ppc64
 
