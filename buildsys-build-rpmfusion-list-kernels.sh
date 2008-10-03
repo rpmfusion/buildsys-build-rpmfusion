@@ -26,10 +26,10 @@
 
 shopt -s extglob
 
-myver="0.0.7"
+myver="0.0.6"
 repo=rpmfusion
 myprog="buildsys-build-${repo}-kerneldevpkgs"
-supported_targetarchs="i586 i686 x86_64 ppc ppc64"
+supported_targetarchs="i586 i686 x86_64 ppc"
 if [[ -e ./buildsys-build-${repo}-kerneldevpkgs-current ]]; then
 	prefix=./buildsys-build-${repo}-
 else
@@ -38,7 +38,7 @@ fi
 
 requires=
 filterfile=
-target=$(uname -m)
+target=
 show_kernels="current"
 
 print_kernels ()
@@ -53,12 +53,6 @@ print_kernels ()
 		this_kernellistfiles="${prefix}kerneldevpkgs-newest"
 	elif [[ "${show_kernels}" == "current" ]]; then
 		this_kernellistfiles="${prefix}kerneldevpkgs-current"
-	fi
-
-	# error out if not defined
-	if (( $(stat -c%s "${this_kernellistfiles}") <= 1 )); then
-		echo "(no kernels defined)"
-		return 1
 	fi
 
 	# if there are no newest kernels use current ones for newest 
@@ -85,32 +79,7 @@ print_kernels ()
 	fi
 
 	# go
-	${this_command} ${this_grepoptions} ${this_kernellistfiles} | while read this_kernel; do 
-		this_kernel_verrel=${this_kernel%%$kernels_known_variants}
-		this_kernel_variant=${this_kernel##$this_kernel_verrel}
-
-		if [[ "${requires}" ]]  || [[ "${buildrequires}" ]]; then
-			if echo ${this_kernel} | grep -- 'default' &> /dev/null; then		
-				if [[ "${requires}" ]]; then
-					echo "Requires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_target}"
-				fi
-	
-				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_target}"
-				fi
-			else
-				if [[ "${requires}" ]]; then
-					echo "Requires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
-				fi
-	
-				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
-				fi
-			fi
-		else
-			echo ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
-		fi
-	done
+	${this_command} ${this_grepoptions} ${this_kernellistfiles} 
 }
 
 print_requires ()
@@ -119,8 +88,21 @@ print_requires ()
 	local this_kernel_variant
 
 	for this_arch in ${supported_targetarchs}; do
+		# pre
 		echo $'\n'"%ifarch ${this_arch}"	
-		print_kernels ${this_arch}
+
+		# kernels
+		for this_kernel in $(print_kernels ${this_arch}); do
+			# preparations
+			this_kernel_verrel=${this_kernel%%$kernels_known_variants}
+			this_kernel_variant=${this_kernel##$this_kernel_verrel}
+
+			# print
+			[[ "${requires}" ]] && echo "Requires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_arch} = ${this_kernel_verrel}"
+			[[ "${buildrequires}" ]] && echo "BuildRequires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_arch} = ${this_kernel_verrel}"
+		done
+	
+		# post
 		echo "%endif"	
 	done
 }
@@ -132,10 +114,11 @@ myprog_help ()
 	echo $'\n'"Available options:"
 	echo " --filterfile <file> -- filter the results with grep --file <file>"
 	echo " --current           -- only list current up2date kernels"
-#	echo " --newest            -- only list newly released kernels"
+	echo " --newest            -- only list newly released kernels"
+#	echo " --no-latest         -- don't list latest up2date kernels"
 	echo " --requires          -- print list as requires with ifarch section for"$'\n'"                        further use in a RPM spec file package header"
 	echo " --prefix <dir>      -- look for the data files in <prefix>"
-	echo " --target <arch>     -- target-arch (ignored if --requires is used)"
+	echo " --target <arch>     -- target-arch (ifnored if --requires is used)"
 	echo $'\n'"Supported target archs: ${supported_targetarchs}"
 }
 
@@ -198,6 +181,10 @@ while [ "${1}" ] ; do
 			shift
 			show_kernels="newest"
 			;;
+#		--no-latest)
+#			shift
+#			show_kernels="nolatest"
+#			;;
 		--help)
 			myprog_help
 			exit 0
@@ -220,14 +207,14 @@ if [[ -e ./kmodtool-kernel-variants ]] ; then
 elif [[ -e /usr/share/kmodtool/kernel-variants ]] ; then
 	kernels_known_variants="$(cat /usr/share/kmodtool/kernel-variants)"
 else
-	echo "Could not find /usr/share/kmodtool/kernel-variants (required)" >&2
+	echo "Could not find /usr/share/kmodtool/kernel-variants" >&2
 	exit 2
 fi
 
 # sanity checks
 if [[ ! "${kernels_known_variants}" ]] ; then
-	echo "could not determine known kenrel variants"
-	exit 2
+		echo "could not determine known kenrel variants"
+		exit 2
 fi
 
 # go

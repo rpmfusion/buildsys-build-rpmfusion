@@ -1,7 +1,7 @@
 %define repo rpmfusion
 
 Name:           buildsys-build-%{repo}
-Version:        41
+Version:        42
 Release:        1%{?dist}
 Summary:        Tools and files used by the %{repo} buildsys 
 
@@ -19,70 +19,59 @@ Source21:       %{name}-filterfile_i686
 Source22:       %{name}-filterfile_x86_64
 Source23:       %{name}-filterfile_ppc
 
-# provide this to avoid a error when generating akmods packages
-Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
+Requires:       %{_bindir}/kmodtool
+BuildRequires:  %{_bindir}/kmodtool
 
 # rpmlint will complain this should be a noarch package; but for
 #  proper builddeps deps it needs to be a non-noarch package
-ExclusiveArch:  i586 i686 x86_64 ppc ppc64
+ExclusiveArch:  i586 i686 x86_64 ppc
 
 # unneeded
 %define debug_package %{nil}
+
 
 %description
 This package contains tools and lists of recent kernels that get used when
 building kmod-packages.
 
+
 %package        kerneldevpkgs-newest
 Summary:        Meta-package to get newly released kernel-devel packages into the buildroot
 Group:          Development/Tools
-Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 Obsoletes:      buildsys-build-newest-kernels-livna < 17
-Provides:       %{name}-kerneldevpkgs-newest-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
-
-Requires:       %{_bindir}/kmodtool
-BuildRequires:  %{_bindir}/kmodtool
+Provides:       %{name}-kerneldevpkgs-newest-%{_target_cpu} = %{version}-%{release}
 
 # we use our own magic here to safe ourself to cut'n'paste the BR
-%{expand:%(bash %{SOURCE2} --newest --requires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
+%{expand:%(bash %{SOURCE2} --newest --requires --buildrequires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
 
 %description kerneldevpkgs-newest
 This is a meta-package used by the buildsystem to track the kernel-devel
 packages for newly released kernels into the buildroot to build
 kmods against them.
 
-%files kerneldevpkgs-newest
-%defattr(-,root,root,-)
-%doc .tmp/newest/README
-
 
 %package        kerneldevpkgs-current
 Summary:        Meta-package to get all current kernel-devel packages into the buildroot
 Group:          Development/Tools
-Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
-Provides:       %{name}-kerneldevpkgs-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
-Provides:       %{name}-kerneldevpkgs-current-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
-
-Requires:       %{_bindir}/kmodtool
-BuildRequires:  %{_bindir}/kmodtool
+Provides:       %{name}-kerneldevpkgs-current-%{_target_cpu} = %{version}-%{release}
+Requires:       %{name}-kerneldevpkgs-newest-%{_target_cpu} = %{version}-%{release}
+Obsoletes:      buildsys-build-current-kernels-livna < 17
 
 # we use our own magic here to safe ourself to cut'n'paste the BR
-%{expand:%(bash %{SOURCE2} --current --requires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
+%{expand:%(bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}- 2>/dev/null)}
 
 %description kerneldevpkgs-current
 This is a meta-package used by the buildsystem to track the kernel-devel
 packages for all current up-to-date kernels into the buildroot to build
 kmods against them.
 
-%files kerneldevpkgs-current
-%defattr(-,root,root,-)
-%doc .tmp/current/README
 
 %prep
 # for debugging purposes output the stuff we use during the rpm generation
-bash %{SOURCE2} --newest --requires --prefix %{_sourcedir}/%{name}-
+bash %{SOURCE2} --newest --requires --buildrequires --prefix %{_sourcedir}/%{name}- | grep -v '^Requires'
 sleep 2
-bash %{SOURCE2} --current --requires --prefix %{_sourcedir}/%{name}-
+bash %{SOURCE2} --current --requires --buildrequires --prefix %{_sourcedir}/%{name}-  | grep -v '^Requires'
 sleep 2
 
 
@@ -93,6 +82,10 @@ echo nothing to build
 %install
 rm -rf $RPM_BUILD_ROOT .tmp/
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/%{name} $RPM_BUILD_ROOT/%{_bindir} .tmp/newest .tmp/current
+
+# can be used as auto-incremental counter in kmod pacakges release field
+#  -- just remember to increase %%{version} everytime!
+echo ".%{version}" > $RPM_BUILD_ROOT/%{_datadir}/%{name}/counter
 
 # install the stuff we need
 install -p -m 0755 %{SOURCE2}  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
@@ -120,9 +113,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_datadir}/%{name}/
 
+%files kerneldevpkgs-newest
+%defattr(-,root,root,-)
+%doc .tmp/newest/README
+
+%files kerneldevpkgs-current
+%defattr(-,root,root,-)
+%doc .tmp/current/README
 
 
 %changelog
+* Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 42-1
+- Rebuild for RPM Fusion
+
 * Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 41-1
 - Rebuild for RPM Fusion
 
