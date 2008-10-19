@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        10
-Release:        0.3
+Release:        0.4
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -100,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Oct 19 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 10:10-0.4
+- rebuild for kernel 2.6.27.3-27.rc1.fc10
+
 * Thu Oct 02 2008 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 10:10-0.3
 - install filterfile for ppc64
 
