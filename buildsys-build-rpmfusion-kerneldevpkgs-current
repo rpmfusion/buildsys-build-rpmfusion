@@ -1,3 +1,3 @@
-2.6.28-0.140.rc9.git1.fc11
-2.6.28-0.140.rc9.git1.fc11smp
-2.6.28-0.140.rc9.git1.fc11PAE
+default
+defaultsmp
+defaultPAE
