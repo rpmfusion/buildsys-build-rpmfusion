@@ -2,7 +2,7 @@
 
 Name:           buildsys-build-%{repo}
 Version:        42
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -123,6 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jan 06 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 42-3
+- rebuild for kernels 2.6.21.7-5.fc8xen 2.6.26.8-57.fc8
+
 * Thu Oct 23 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 42-2
 - rebuild for kernels 2.6.21.7-5.fc8xen 2.6.26.6-49.fc8
 
