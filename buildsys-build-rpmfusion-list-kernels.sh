@@ -108,7 +108,26 @@ print_kernels ()
 				fi
 			fi
 		else
-			echo ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
+			if echo ${this_kernel} | grep -- 'default' &> /dev/null; then
+				# fixme: there are better/reliable ways to get the latest version, but this should do in the 
+				# buildsys, the only place where this normally is used; hardcoding the variants is also not ideal
+				if [[ "${this_kernel_variant}" ]]; then
+					# non-standard-kernel
+					local real_version="$(ls -1r /usr/src/kernels/ | grep -v -e "${this_kernel_variant}PAE$" | head -n1)"
+					real_version=${real_version%%.$kernels_known_variants}
+				else
+					# standard kernel
+					local real_version="$(ls -1r /usr/src/kernels/ | grep -v -e "PAE$" -e "smp$" | head -n1)"
+				fi				
+				if [[ "${real_version}" ]]; then
+					echo ${real_version}${this_kernel_variant:+.${this_kernel_variant}}
+				else
+					# should we fail here?
+					echo unknown.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
+				fi
+			else
+				echo ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
+			fi
 		fi
 	done
 }
