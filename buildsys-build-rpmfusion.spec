@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        11
-Release:        0.7
+Release:        0.8
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -14,11 +14,6 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Source2:        %{name}-list-kernels.sh
 Source5:        %{name}-README
 Source11:       %{name}-kerneldevpkgs-current
-Source20:       %{name}-filterfile_i586
-Source21:       %{name}-filterfile_i686
-Source22:       %{name}-filterfile_x86_64
-Source23:       %{name}-filterfile_ppc
-Source24:       %{name}-filterfile_ppc64
 
 # provide this to avoid a error when generating akmods packages
 Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
@@ -76,11 +71,6 @@ install -p -m 0755 %{SOURCE2}  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
 install -p -m 0644 %{SOURCE5}  .tmp/current/README
 ln -s kerneldevpkgs-current $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-newest
 install -p -m 0644 %{SOURCE11} $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-current
-install -p -m 0644 %{SOURCE20} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i586
-install -p -m 0644 %{SOURCE21} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_i686
-install -p -m 0644 %{SOURCE22} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_x86_64
-install -p -m 0644 %{SOURCE23} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_ppc
-install -p -m 0644 %{SOURCE24} $RPM_BUILD_ROOT/%{_datadir}/%{name}/filterfile_ppc64
 
 
 # adjust default-path
@@ -100,7 +90,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Sun Jan 11 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.1
+* Sun Feb 15 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.8
+- adjust for Fedora new kenrels scheme
+- use a different way to generate lists
+
+* Sun Jan 11 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.7
 - rebuild, and just use the latest as default
 
 * Sun Jan 11 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.6
