@@ -95,11 +95,11 @@ print_kernels ()
 		if [[ "${requires}" ]]  || [[ "${buildrequires}" ]]; then
 			if echo ${this_kernel} | grep -- 'default' &> /dev/null; then		
 				if [[ "${requires}" ]]; then
-					echo "Requires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_target}"
+					echo "Requires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel%{_isa}"
 				fi
 	
 				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel-${this_target}"
+					echo "BuildRequires: kernel${this_kernel_variant:+-${this_kernel_variant}}-devel%{_isa}"
 				fi
 			else
 				if [[ "${requires}" ]]; then
