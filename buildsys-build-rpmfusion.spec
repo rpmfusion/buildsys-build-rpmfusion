@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        10
-Release:        0.33
+Release:        0.34
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -100,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Aug 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:10-0.34
+- rebuild for kernel 2.6.27.30-170.2.82.fc10
+
 * Sat Aug 15 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:10-0.33
 - rebuild for kernel 2.6.27.29-170.2.79.fc10
 
