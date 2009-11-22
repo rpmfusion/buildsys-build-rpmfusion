@@ -2,7 +2,7 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        12
+Version:        13
 Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
@@ -17,10 +17,6 @@ Source11:       %{name}-kerneldevpkgs-current
 
 # provide this to avoid a error when generating akmods packages
 Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
-
-# rpmlint will complain this should be a noarch package; but for
-#  proper builddeps deps it needs to be a non-noarch package
-ExclusiveArch:  i586 i686 x86_64 ppc ppc64
 
 # unneeded
 %define debug_package %{nil}
@@ -90,6 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Nov 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:13-0.1
+- no i586 in devel anymore, so adjust ExclusiveArch and 
+  buildsys-build-rpmfusion-list-kernels.sh
+
 * Sun Jun 14 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:12-0.1
 - rebuild for rawhide
 
