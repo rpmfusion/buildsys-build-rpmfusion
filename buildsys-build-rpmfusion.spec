@@ -20,7 +20,7 @@ Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
 
 # rpmlint will complain this should be a noarch package; but for
 #  proper builddeps deps it needs to be a non-noarch package
-ExclusiveArch:  i586 i686 x86_64 ppc ppc64
+ExclusiveArch:  i686 x86_64 ppc ppc64
 
 # unneeded
 %define debug_package %{nil}
@@ -92,6 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sun Nov 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:12-2
 - rebuild for kernel 2.6.31.6-134.fc12
+- no i586 in F-12, so adjust ExclusiveArch and 
+  buildsys-build-rpmfusion-list-kernels.sh
 
 * Fri Nov 20 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:12-0.2
 - rebuild for kernel 2.6.31.5-127.fc12

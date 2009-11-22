@@ -47,13 +47,9 @@ bb_list_kernels_default()
 	echo ${1}
 }
 
-bb_list_kernels_i586()
-{
-	bb_list_kernels_default ${1}
-}
-
 bb_list_kernels_i686()
 {
+	bb_list_kernels_default ${1}
 	echo ${1}PAE
 }
 
