@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        12
-Release:        2
+Release:        3
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -90,6 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Nov 25 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:12-3
+- rebuild for kernel 2.6.31.6-145.fc12
+
 * Sun Nov 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:12-2
 - rebuild for kernel 2.6.31.6-134.fc12
 - no i586 in F-12, so adjust ExclusiveArch and 
