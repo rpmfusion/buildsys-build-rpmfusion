@@ -2,8 +2,8 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        13
-Release:        0.1
+Version:        14
+Release:        12
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,42 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat May 28 2011 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-12
+- rebuild for kernel 2.6.35.13-92.fc14
+
+* Thu May 05 2011 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-11
+- rebuild for kernel 2.6.35.13-91.fc14
+
+* Sun Apr 24 2011 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-10
+- rebuild for kernel 2.6.35.12-90.fc14
+
+* Mon Apr 04 2011 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-9
+- rebuild for kernel 2.6.35.12-88.fc14
+
+* Sat Feb 12 2011 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-8
+- rebuild for kernel 2.6.35.11-83.fc14
+
+* Fri Dec 24 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-7
+- rebuild for kernel 2.6.35.10-74.fc14
+
+* Wed Dec 22 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-6
+- rebuild for kernel 2.6.35.10-72.fc14
+
+* Mon Dec 20 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-5
+- rebuild for kernel 2.6.35.10-69.fc14
+
+* Fri Dec 17 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-4
+- rebuild for kernel 2.6.35.10-68.fc14
+
+* Sun Dec 05 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-3
+- rebuild for kernel 2.6.35.9-64.fc14
+
+* Mon Nov 01 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-2
+- rebuild for kernel 2.6.35.6-48.fc14
+
+* Fri Oct 29 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:14-1
+- rebuild for kernel 2.6.35.6-45.fc14
+
 * Sun Nov 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:13-0.1
 - no i586 in devel anymore, so adjust ExclusiveArch and 
   buildsys-build-rpmfusion-list-kernels.sh
