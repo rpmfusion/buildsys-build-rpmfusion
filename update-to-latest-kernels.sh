@@ -11,7 +11,7 @@ if [[ ! "${1}" ]] ; then
 	exit 1
 fi
 
-if [[ ! "${RPM_PACKAGER}" ]] ; then
+if [[ ! $(rpmdev-packager) ]] ; then
 	echo "Please set RPM_PACKAGER for rpmdev-bumpspec" >&2
 	exit 1
 fi
