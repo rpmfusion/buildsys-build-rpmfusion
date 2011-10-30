@@ -89,9 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 * Sun Oct 30 2011 Nicolas Chauvet <kwizart@gmail.com> - 10:16-4
 - rebuild for kernel 3.1.0-5.fc16
 
-* Sun Oct 30 2011 Nicolas Chauvet <kwizart@gmail.com> - 10:16-3
-- rebuild for kernel 3.1.0-5.fc16
-
 * Thu Oct 27 2011 Nicolas Chauvet <kwizart@gmail.com> - 10:16-2
 - rebuild for kernel 3.1.0-1.fc16
 
