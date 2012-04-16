@@ -2,7 +2,7 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        17
+Version:        18
 Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Apr 16 2012 Nicolas Chauvet <kwizart@gmail.com> - 10:18-0.1
+- Build for default F-18 kernels
+
 * Tue Jan 03 2012 Nicolas Chauvet <kwizart@gmail.com> - 10:17-0.1
 - Build for default F-17 kernels
 
