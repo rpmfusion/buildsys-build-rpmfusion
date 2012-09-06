@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        17
-Release:        15
+Release:        17.secondary
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Sep 03 2012 Nicolas Chauvet <kwizart@gmail.com> - 10:17-17.secondary
+- Bump for secondary-arches releases
+
 * Fri Aug 31 2012 Nicolas Chauvet <kwizart@gmail.com> - 10:17-15
 - rebuild for kernel 3.5.3-1.fc17
 
