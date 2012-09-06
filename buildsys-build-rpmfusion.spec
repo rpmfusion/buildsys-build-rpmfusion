@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        18
-Release:        0.2
+Release:        0.2.2
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
