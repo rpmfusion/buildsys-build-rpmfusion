@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Thu Apr 18 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:17-54
-- rebuild for kernel 3.8.8-202.fc17
+- rebuild for kernel 3.8.8-100.fc17
 
 * Fri Apr 12 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:17-53
 - rebuild for kernel 3.8.7-100.fc17
