@@ -27,10 +27,10 @@
 
 shopt -s extglob
 
-myver="0.2.0"
+myver="0.2.1"
 repo=rpmfusion
 myprog="buildsys-build-${repo}-kerneldevpkgs"
-supported_targetarchs="i686 x86_64 ppc ppc64 armv5tel armv7l armv7hl s390x"
+supported_targetarchs="i686 x86_64 ppc ppc64 ppc64p7 armv5tel armv7l armv7hl s390x"
 if [[ -e ./buildsys-build-${repo}-kerneldevpkgs-current ]]; then
 	prefix=./buildsys-build-${repo}-
 else
@@ -67,30 +67,28 @@ bb_list_kernels_ppc()
 
 bb_list_kernels_ppc64()
 {
+        bb_list_kernels_default ${1}
+}
+
+bb_list_kernels_ppc64p7()
+{
 	bb_list_kernels_default ${1}
 }
+
 
 bb_list_kernels_armv5tel()
 {
 	bb_list_kernels_default ${1}
-	echo ${1}kirkwood
 }
 
 bb_list_kernels_armv7l()
 {
-	echo ${1}highbank
-	echo ${1}imx
-	echo ${1}omap
-	echo ${1}tegra
+	bb_list_kernels_default ${1}
 }
 
 bb_list_kernels_armv7hl()
 {
 	bb_list_kernels_default ${1}
-	echo ${1}highbank
-	echo ${1}imx
-	echo ${1}omap
-	echo ${1}tegra
 }
 
 bb_list_kernels_s390x()
