@@ -78,7 +78,8 @@ bb_list_kernels_ppc64p7()
 
 bb_list_kernels_armv5tel()
 {
-	bb_list_kernels_default ${1}
+	#bb_list_kernels_default ${1}
+	echo ${1}kirkwood
 }
 
 bb_list_kernels_armv7l()
