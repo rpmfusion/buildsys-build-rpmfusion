@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        18
-Release:        45
+Release:        46
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Sep 25 2013 Leigh Scott <leigh123linux@googlemail.com> - 10:18-46
+- rebuild for kernel 3.10.12-100.fc18
+
 * Sat Sep 14 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:18-45
 - rebuild for kernel 3.10.11-100.fc18
 
