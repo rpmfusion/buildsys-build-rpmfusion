@@ -4,6 +4,7 @@ print_kernellist()
 	echo ${1}
 	echo ${1}smp
 	echo ${1}PAE
+	echo ${1}lpae
 }
 
 if [[ ! "${1}" ]] ; then

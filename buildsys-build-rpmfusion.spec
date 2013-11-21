@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        20
-Release:        0.1
+Release:        0.2
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Nov 21 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.2
+- Add lpae as a known kvarriant
+
 * Thu Aug 01 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.1
 - Bump for F-20
 
@@ -181,7 +184,7 @@ rm -rf $RPM_BUILD_ROOT
 * Sun Dec 28 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.4
 - rebuild for kernel 2.6.28-3.fc11
 
-* Sun Dec 27 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.3
+* Sat Dec 27 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.3
 - just track in the latest kernel
 
 * Sun Dec 21 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 10:11-0.2
@@ -260,10 +263,10 @@ rm -rf $RPM_BUILD_ROOT
 * Sat Nov 10 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 20-1
 - Update to latest kernels 2.6.23.1-49.fc8 2.6.21-2950.fc8xen
 
-* Tue Oct 29 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 19-1
+* Mon Oct 29 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 19-1
 - Update to latest kernels 2.6.23.1-41.fc8 2.6.21-2950.fc8xen
 
-* Tue Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 18-1
+* Mon Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 18-1
 - Update to latest kernels 2.6.23.1-41.fc8 2.6.21-2950.fc8xen
 
 * Sun Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 17-3
