@@ -266,7 +266,7 @@ rm -rf $RPM_BUILD_ROOT
 * Mon Oct 29 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 19-1
 - Update to latest kernels 2.6.23.1-41.fc8 2.6.21-2950.fc8xen
 
-* Mon Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 18-1
+* Sun Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 18-1
 - Update to latest kernels 2.6.23.1-41.fc8 2.6.21-2950.fc8xen
 
 * Sun Oct 28 2007 Thorsten Leemhuis <fedora[AT]leemhuis[DOT]info> - 17-3
