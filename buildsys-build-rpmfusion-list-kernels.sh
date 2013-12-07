@@ -94,6 +94,11 @@ bb_list_kernels_armv7hl()
 	echo ${1}lpae
 }
 
+bb_list_kernels_aarch64()
+{
+	bb_list_kernels_default ${1}
+}
+
 bb_list_kernels_s390x()
 {
         bb_list_kernels_default ${1}

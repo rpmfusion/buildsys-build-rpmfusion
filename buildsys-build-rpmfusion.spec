@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 * Sat Dec 07 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.5
 - Fix kernel variant + separator
 - rebuild for kernel 3.11.10-300.fc20
+- Add support for aarch64
 
 * Sun Dec 01 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.3
 - rebuild for kernel 3.11.9-300.fc20
