@@ -31,6 +31,8 @@ myver="0.2.1"
 repo=rpmfusion
 myprog="buildsys-build-${repo}-kerneldevpkgs"
 supported_targetarchs="i686 x86_64 ppc ppc64 ppc64p7 armv5tel armv7l armv7hl s390x"
+#This has changed in Fedora >= 20
+variant_sep="+"
 if [[ -e ./buildsys-build-${repo}-kerneldevpkgs-current ]]; then
 	prefix=./buildsys-build-${repo}-
 else
@@ -132,11 +134,11 @@ print_kernels ()
 				fi
 			else
 				if [[ "${requires}" ]]; then
-					echo "Requires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
+					echo "Requires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+${variant_sep}${this_kernel_variant}}"
 				fi
 	
 				if [[ "${buildrequires}" ]]; then 
-					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}"
+					echo "BuildRequires: kernel-devel-uname-r = ${this_kernel_verrel}.${this_target}${this_kernel_variant:+${variant_sep}${this_kernel_variant}}"
 				fi
 			fi
 		else
@@ -158,7 +160,7 @@ print_kernels ()
 					echo unknown.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
 				fi
 			else
-				echo ${this_kernel_verrel}.${this_target}${this_kernel_variant:+.${this_kernel_variant}}
+				echo ${this_kernel_verrel}.${this_target}${this_kernel_variant:+${variant_sep}${this_kernel_variant}}
 			fi
 		fi
 	done
