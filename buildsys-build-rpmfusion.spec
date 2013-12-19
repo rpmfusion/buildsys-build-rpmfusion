@@ -2,8 +2,8 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        20
-Release:        1
+Version:        21
+Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Dec 19 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.1
+- Open Fedora-21/Rawhide
+
 * Sat Dec 14 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-1
 - Tag for F-20 GA
 
