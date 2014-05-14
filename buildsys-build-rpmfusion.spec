@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        20
-Release:        23
+Release:        24
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed May 14 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-24
+- rebuild for kernel 3.14.4-200.fc20
+
 * Thu May 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-23
 - rebuild for kernel 3.14.3-200.fc20
 
