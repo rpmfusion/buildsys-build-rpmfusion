@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        21
-Release:        0.1
+Release:        0.2
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.2
+- Rebuilt to test fedora branched packages
+
 * Thu Dec 19 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.1
 - Open Fedora-21/Rawhide
 
