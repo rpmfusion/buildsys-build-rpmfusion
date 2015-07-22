@@ -22,8 +22,9 @@ rpmdev-bumpspec -c "- rebuild for kernel ${1}" *.spec
 # update buildsys-build-rpmfusion-kerneldevpkgs-current
 print_kernellist ${1} > buildsys-build-rpmfusion-kerneldevpkgs-current
 
-cvs diff -u
+git diff -u
 read
-make clog; cvs commit -F clog 
+fedpkg clog; git commit -F clog
 rm clog
-make tag build
+rfpkg-free push
+rfpkg-free build
