@@ -24,7 +24,7 @@ print_kernellist ${1} > buildsys-build-rpmfusion-kerneldevpkgs-current
 
 git diff -u
 read
-fedpkg clog; git commit -F clog
+fedpkg clog; git commit -F clog -a
 rm clog
 rfpkg-free push
 rfpkg-free build
