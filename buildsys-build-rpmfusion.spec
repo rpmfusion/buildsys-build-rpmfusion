@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        22
-Release:        2
+Release:        3
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-3
+- rebuild for kernel 4.1.3-200.fc22
+
 * Wed Jul 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-2
 - rebuild for kernel 4.0.8-300.fc22
 
