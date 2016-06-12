@@ -2,8 +2,8 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        24
-Release:        0.2
+Version:        25
+Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jun 12 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.1
+- Update to 25
+
 * Mon May 16 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:24-0.2
 - Bump for 24
 
