@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        24
-Release:        1
+Release:        3
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,6 +86,12 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 01 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:24-3
+- rebuild for kernel 4.6.3-300.fc24
+
+* Fri Jul 01 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:24-2
+- rebuild for kernel 4.6.3-300.fc24.x86_64
+
 * Mon Jun 20 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:24-1
 - rebuild for kernel 4.5.5-300.fc24
 
