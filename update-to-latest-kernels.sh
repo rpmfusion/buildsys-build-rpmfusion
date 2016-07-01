@@ -26,6 +26,6 @@ git diff -u
 read
 fedpkg clog; git commit -F clog -a
 rm clog
-rfpkg-free push
+rfpkg push
 branch=$(git rev-parse --abbrev-ref HEAD)
-rfpkg-free build ${branch}-free
+rfpkg build --target ${branch}-free
