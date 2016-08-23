@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        20
-Release:        64
+Release:        100
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -14,6 +14,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Source2:        %{name}-list-kernels.sh
 Source5:        %{name}-README
 Source11:       %{name}-kerneldevpkgs-current
+Source20:       %{name}-macros
 
 # provide this to avoid a error when generating akmods packages
 Provides:       buildsys-build-rpmfusion-kerneldevpkgs-akmod-%{_target_cpu}
@@ -73,6 +74,10 @@ install -p -m 0644 %{SOURCE11} $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs
 sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
 
+# Install dist macro for the buildsys
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/rpm
+install -pm 0644 %{SOURCE20} $RPM_BUILD_ROOT%{_sysconfdir}/rpm/macros.zz-%{name}
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,12 +85,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
+%config %{_sysconfdir}/rpm/macros.zz-%{name}
 %{_bindir}/*
 %{_datadir}/%{name}/
 
 
 
 %changelog
+* Tue Aug 23 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:20-100
+- Switch to EL7
+- Add %%{_sysconfdir}/rpm/macros.zz-%%{name} to override dist
+
 * Wed Apr 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-64
 - rebuild for kernel 3.19.5-100.fc20
 
