@@ -30,7 +30,7 @@ shopt -s extglob
 myver="0.2.1"
 repo=rpmfusion
 myprog="buildsys-build-${repo}-kerneldevpkgs"
-supported_targetarchs="i686 x86_64 ppc ppc64 ppc64p7 armv5tel armv7l armv7hl s390x"
+supported_targetarchs="i686 x86_64 ppc ppc64 ppc64le ppc64p7 aarch64 armv5tel armv7l armv7hl s390x"
 #This has changed in Fedora >= 20
 variant_sep="+"
 if [[ -e ./buildsys-build-${repo}-kerneldevpkgs-current ]]; then
@@ -68,6 +68,11 @@ bb_list_kernels_ppc()
 }
 
 bb_list_kernels_ppc64()
+{
+        bb_list_kernels_default ${1}
+}
+
+bb_list_kernels_ppc64le()
 {
         bb_list_kernels_default ${1}
 }
