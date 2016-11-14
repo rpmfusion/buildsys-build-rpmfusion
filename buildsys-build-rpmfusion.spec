@@ -89,10 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 * Mon Nov 14 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-1
 - rebuild for kernel 4.8.6-300.fc25
 
-* Tue Aug 30 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:25-0.4
+* Tue Aug 30 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.4
 - rebuild for kernel 4.8.0-0.rc4.git0.1.fc25
 
-* Fri Jul 01 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:25-0.2
+* Fri Jul 01 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.2
 - rebuild for kernel 4.6.3-300.fc24.x86_64
 
 * Sun Jun 12 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.1
