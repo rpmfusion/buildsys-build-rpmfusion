@@ -86,10 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Sat Aug 06 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:26-0.2
+* Sat Aug 06 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:26-0.2
 - Bump for 26
 
-* Fri Jul 01 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:25-0.2
+* Fri Jul 01 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.2
 - rebuild for kernel 4.6.3-300.fc24.x86_64
 
 * Sun Jun 12 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.1
