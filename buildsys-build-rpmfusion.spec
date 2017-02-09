@@ -2,8 +2,8 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        20
-Release:        100
+Version:        26
+Release:        0.2
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -92,195 +92,113 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Aug 23 2016 Nicolas Chauvet <nicolas.chauvet@kwizart.fr> - 10:20-100
-- Switch to EL7
-- Add %%{_sysconfdir}/rpm/macros.zz-%%{name} to override dist
+* Sat Aug 06 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:26-0.2
+- Bump for 26
 
-* Wed Apr 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-64
-- rebuild for kernel 3.19.5-100.fc20
+* Fri Jul 01 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.2
+- rebuild for kernel 4.6.3-300.fc24.x86_64
 
-* Wed Apr 15 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-63
-- rebuild for kernel 3.19.4-100.fc20
+* Sun Jun 12 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:25-0.1
+- Update to 25
 
-* Sat Mar 28 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-62
-- rebuild for kernel 3.19.3-100.fc20
+* Mon May 16 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:24-0.2
+- Bump for 24
 
-* Tue Mar 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-61
-- rebuild for kernel 3.18.9-100.fc20
+* Sat Oct 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:23-1
+- rebuild for kernel 4.2.3-300.fc23
 
-* Tue Mar 03 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-60
-- rebuild for kernel 3.18.8-100.fc20
+* Fri Aug 07 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-7
+- rebuild for kernel 4.1.4-200.fc22
 
-* Sat Feb 14 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-59
-- rebuild for kernel 3.18.7-100.fc20
+* Wed Aug 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-6
+- rebuild for kernel 4.1.3-200.fc22
 
-* Sun Feb 08 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-58
-- rebuild for kernel 3.18.6-100.fc20
+* Wed Aug 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-5
+- rebuild for kernel 4.1.3-201.fc22
 
-* Wed Feb 04 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-57
-- rebuild for kernel 3.18.5-101.fc20
+* Wed Jul 29 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-4
+- rebuild for kernel 4.1.2-200.fc22
 
-* Sat Jan 31 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-56
-- rebuild for kernel 3.18.5-100.fc20
+* Fri Jul 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-3
+- rebuild for kernel 4.1.3-200.fc22
 
-* Sat Jan 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:20-55
-- rebuild for kernel 3.17.8-200.fc20
+* Wed Jul 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-2
+- rebuild for kernel 4.0.8-300.fc22
 
-* Thu Dec 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-54
-- rebuild for kernel 3.17.7-200.fc20
+* Mon May 25 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-1
+- rebuild for kernel 4.0.4-301.fc22
 
-* Sat Dec 13 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-53
-- rebuild for kernel 3.17.6-200.fc20
+* Mon May 11 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-0.2
+- Rebuilt for kernel 4.0.2-300.fc22
 
-* Sun Nov 23 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-52
-- rebuild for kernel 3.17.4-200.fc20
+* Tue May 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-0.1
+- Bump for f22 branch
 
-* Sun Nov 16 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-51
-- rebuild for kernel 3.17.3-200.fc20
+* Wed Apr 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-20
+- rebuild for kernel 3.19.5-200.fc21
 
-* Mon Nov 10 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-50
-- rebuild for kernel 3.17.2-200.fc20
+* Wed Apr 15 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-19.1
+- rebuild for kernel 3.19.4-200.fc21
 
-* Fri Oct 31 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-49
-- rebuild for kernel 3.16.7-200.fc20
+* Fri Apr 03 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-18.1
+- Rebuilt for refresh repodata
 
-* Tue Oct 28 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-48
-- rebuild for kernel 3.16.6-203.fc20
+* Sat Mar 28 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-18
+- rebuild for kernel 3.19.3-200.fc21
 
-* Thu Oct 16 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-47
-- rebuild for kernel 3.16.6-200.fc20
+* Fri Mar 27 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-17
+- rebuild for kernel 3.19.2-201.fc21
 
-* Fri Oct 10 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-46
-- rebuild for kernel 3.16.5-200.fc20
+* Mon Mar 23 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-16
+- rebuild for kernel 3.19.2-200.fc21
 
-* Tue Oct 07 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-45
-- rebuild for kernel 3.16.4-200.fc20
+* Sat Mar 21 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-15
+- rebuild for kernel 3.19.1-201.fc21
 
-* Fri Sep 19 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-44
-- rebuild for kernel 3.16.3-200.fc20
+* Tue Mar 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-14
+- rebuild for kernel 3.18.9-200.fc21
 
-* Tue Sep 16 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-43
-- rebuild for kernel 3.16.2-201.fc20
+* Tue Mar 03 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-13
+- rebuild for kernel 3.18.8-201.fc21
 
-* Tue Sep 09 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-42
-- rebuild for kernel 3.16.2-200.fc20
+* Sat Feb 14 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-12
+- rebuild for kernel 3.18.7-200.fc21
 
-* Sat Aug 30 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-41
-- rebuild for kernel 3.15.10-201.fc20
+* Sun Feb 08 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-11
+- rebuild for kernel 3.18.6-200.fc21
 
-* Wed Aug 20 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-40
-- rebuild for kernel 3.15.10-200.fc20
+* Wed Feb 04 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-10
+- rebuild for kernel 3.18.5-201.fc21
 
-* Fri Aug 15 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-39
-- rebuild for kernel 3.15.10-200.fc20
+* Sat Jan 31 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-9
+- rebuild for kernel 3.18.5-200.fc21
 
-* Mon Aug 11 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-38
-- rebuild for kernel 3.15.9-200.fc20
+* Wed Jan 21 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-8
+- rebuild for kernel 3.18.3-201.fc21
 
-* Fri Aug 01 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-37
-- rebuild for kernel 3.15.8-200.fc20
+* Thu Jan 15 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-7
+- rebuild for kernel 3.18.2-200.fc21
 
-* Fri Aug 01 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-36
-- rebuild for kernel 3.15.7-200.fc20
+* Sat Jan 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-6
+- rebuild for kernel 3.17.8-300.fc21
 
-* Fri Jul 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-35
-- rebuild for kernel 3.15.6-200.fc20
+* Thu Dec 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-5
+- rebuild for kernel 3.17.7-300.fc21
 
-* Thu Jul 17 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-34
-- rebuild for kernel 3.15.5-200.fc20
+* Sun Dec 14 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-4
+- rebuild for kernel 3.17.6-300.fc21
 
-* Tue Jul 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-33
-- rebuild for kernel 3.15.4-200.fc20
+* Sat Dec 13 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-2
+- rebuild for kernel 3.17.4-302.fc21
 
-* Tue Jul 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-32
-- rebuild for kernel 3.15.4-200.fc20
+* Fri Dec 05 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-1
+- rebuild for kernel 3.17.4-301.fc21
 
-* Tue Jul 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-31
-- rebuild for kernel 3.15.3-200.fc20
+* Fri Jul 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.2
+- Rebuilt to test fedora branched packages
 
-* Sat Jun 28 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-30
-- rebuild for kernel 3.14.9-200.fc20
-
-* Tue Jun 17 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-29
-- rebuild for kernel 3.14.8-200.fc20
-
-* Fri Jun 13 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-28
-- rebuild for kernel 3.14.7-200.fc20
-
-* Sun Jun 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-26
-- rebuild for kernel 3.14.6-200.fc20
-
-* Mon Jun 02 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-25
-- rebuild for kernel 3.14.5-200.fc20
-
-* Wed May 14 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-24
-- rebuild for kernel 3.14.4-200.fc20
-
-* Thu May 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-23
-- rebuild for kernel 3.14.3-200.fc20
-
-* Thu May 08 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-22
-- rebuild for kernel 3.14.3-200.fc20
-
-* Wed Apr 30 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-21
-- rebuild for kernel 3.14.2-200.fc20
-
-* Wed Apr 23 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-20
-- rebuild for kernel 3.14.1-200.fc20
-
-* Wed Apr 16 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-19
-- rebuild for kernel 3.13.10-200.fc20
-
-* Fri Apr 04 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-18
-- rebuild for kernel 3.13.9-200.fc20
-
-* Wed Apr 02 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-17
-- rebuild for kernel 3.13.8-200.fc20
-
-* Tue Mar 25 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-16
-- rebuild for kernel 3.13.7-200.fc20
-
-* Sun Mar 09 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-15
-- rebuild for kernel 3.13.6-200.fc20
-
-* Tue Mar 04 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-14
-- rebuild for kernel 3.13.5-202.fc20
-
-* Tue Feb 25 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-13
-- rebuild for kernel 3.13.5-200.fc20
-
-* Mon Feb 24 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-12
-- rebuild for kernel 3.13.4-200.fc20
-
-* Mon Feb 17 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-11
-- rebuild for kernel 3.13.3-201.fc20
-
-* Fri Feb 14 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-10
-- rebuild for kernel 3.13.3-200.fc20
-
-* Wed Feb 12 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-9
-- rebuild for kernel 3.13.2-200.fc20
-
-* Fri Feb 07 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-8
-- rebuild for kernel 3.12.10-300.fc20
-
-* Thu Jan 30 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-7
-- rebuild for kernel 3.12.9-301.fc20
-
-* Tue Jan 28 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-6
-- rebuild for kernel 3.12.9-300.fc20
-
-* Fri Jan 17 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-5
-- rebuild for kernel 3.12.8-300.fc20
-
-* Sun Jan 12 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:20-4
-- rebuild for kernel 3.12.7-300.fc20
-
-* Tue Dec 24 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-3
-- rebuild for kernel 3.12.6-300.fc20
-
-* Fri Dec 20 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-2
-- rebuild for kernel 3.12.5-302.fc20
+* Thu Dec 19 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.1
+- Open Fedora-21/Rawhide
 
 * Sat Dec 14 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-1
 - Tag for F-20 GA
