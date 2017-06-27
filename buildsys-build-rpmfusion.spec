@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          11
 Version:        20
-Release:        101
+Release:        102
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jun 27 2017 Nicolas Chauvet <kwizart@gmail.com> - 11:20-102
+- Rebuilt for multilibs
+
 * Thu Feb 09 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:20-101
 - rebuild for kernel 3.10.0-514.el7
 
