@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        26
-Release:        0.6
+Release:        1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,7 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Fri Jul 07 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:26-0.6
+* Fri Jul 07 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:26-1
+- Update for f26 GA kernel
 - rebuild for kernel 4.11.8-300.fc26
 
 * Wed May 17 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:26-0.5
