@@ -53,7 +53,6 @@ bb_list_kernels_default()
 bb_list_kernels_i686()
 {
 	bb_list_kernels_default ${1}
-	echo ${1}PAE
 }
 
 bb_list_kernels_x86_64()
@@ -64,7 +63,6 @@ bb_list_kernels_x86_64()
 bb_list_kernels_ppc()
 {
 	bb_list_kernels_default ${1}
-	echo ${1}smp
 }
 
 bb_list_kernels_ppc64()
