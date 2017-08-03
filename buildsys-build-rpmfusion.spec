@@ -1,9 +1,9 @@
 %define repo rpmfusion
 
 Name:           buildsys-build-%{repo}
-Epoch:          10
-Version:        24
-Release:        0.2
+Epoch:          11
+Version:        18
+Release:        1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 Group:          Development/Tools
@@ -86,110 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Mon May 16 2016 Nicolas Chauvet <kwizart@gmail.com> - 10:24-0.2
-- Bump for 24
-
-* Sat Oct 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:23-1
-- rebuild for kernel 4.2.3-300.fc23
-
-* Fri Aug 07 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-7
-- rebuild for kernel 4.1.4-200.fc22
-
-* Wed Aug 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-6
-- rebuild for kernel 4.1.3-200.fc22
-
-* Wed Aug 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-5
-- rebuild for kernel 4.1.3-201.fc22
-
-* Wed Jul 29 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-4
-- rebuild for kernel 4.1.2-200.fc22
-
-* Fri Jul 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-3
-- rebuild for kernel 4.1.3-200.fc22
-
-* Wed Jul 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-2
-- rebuild for kernel 4.0.8-300.fc22
-
-* Mon May 25 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-1
-- rebuild for kernel 4.0.4-301.fc22
-
-* Mon May 11 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-0.2
-- Rebuilt for kernel 4.0.2-300.fc22
-
-* Tue May 05 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:22-0.1
-- Bump for f22 branch
-
-* Wed Apr 22 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-20
-- rebuild for kernel 3.19.5-200.fc21
-
-* Wed Apr 15 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-19.1
-- rebuild for kernel 3.19.4-200.fc21
-
-* Fri Apr 03 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-18.1
-- Rebuilt for refresh repodata
-
-* Sat Mar 28 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-18
-- rebuild for kernel 3.19.3-200.fc21
-
-* Fri Mar 27 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-17
-- rebuild for kernel 3.19.2-201.fc21
-
-* Mon Mar 23 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-16
-- rebuild for kernel 3.19.2-200.fc21
-
-* Sat Mar 21 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-15
-- rebuild for kernel 3.19.1-201.fc21
-
-* Tue Mar 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-14
-- rebuild for kernel 3.18.9-200.fc21
-
-* Tue Mar 03 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-13
-- rebuild for kernel 3.18.8-201.fc21
-
-* Sat Feb 14 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-12
-- rebuild for kernel 3.18.7-200.fc21
-
-* Sun Feb 08 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-11
-- rebuild for kernel 3.18.6-200.fc21
-
-* Wed Feb 04 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-10
-- rebuild for kernel 3.18.5-201.fc21
-
-* Sat Jan 31 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-9
-- rebuild for kernel 3.18.5-200.fc21
-
-* Wed Jan 21 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-8
-- rebuild for kernel 3.18.3-201.fc21
-
-* Thu Jan 15 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-7
-- rebuild for kernel 3.18.2-200.fc21
-
-* Sat Jan 10 2015 Nicolas Chauvet <kwizart@gmail.com> - 10:21-6
-- rebuild for kernel 3.17.8-300.fc21
-
-* Thu Dec 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-5
-- rebuild for kernel 3.17.7-300.fc21
-
-* Sun Dec 14 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-4
-- rebuild for kernel 3.17.6-300.fc21
-
-* Sat Dec 13 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-2
-- rebuild for kernel 3.17.4-302.fc21
-
-* Fri Dec 05 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-1
-- rebuild for kernel 3.17.4-301.fc21
-
-* Fri Jul 18 2014 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.2
-- Rebuilt to test fedora branched packages
-
-* Thu Dec 19 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:21-0.1
-- Open Fedora-21/Rawhide
-
-* Sat Dec 14 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-1
-- Tag for F-20 GA
-
-* Tue Dec 10 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.6
-- rebuild for kernel 3.11.10-301.fc20
+* Thu Aug 03 2017 Nicolas Chauvet <kwizart@gmail.com> - 11:18-1
+- rebuild for kernel 2.6.32-642.el6
 
 * Sat Dec 07 2013 Nicolas Chauvet <kwizart@gmail.com> - 10:20-0.5
 - Fix kernel variant + separator
