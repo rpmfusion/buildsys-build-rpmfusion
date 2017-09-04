@@ -2,14 +2,12 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        26
-Release:        0.4
+Version:        27
+Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
-Group:          Development/Tools
 License:        MIT
 URL:            http://rpmfusion.org
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Source2:        %{name}-list-kernels.sh
 Source5:        %{name}-README
@@ -27,7 +25,6 @@ building kmod-packages.
 
 %package        kerneldevpkgs-current
 Summary:        Meta-package to get all current kernel-devel packages into the buildroot
-Group:          Development/Tools
 Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-kerneldevpkgs-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-kerneldevpkgs-current-%{_target_cpu} = %{?epoch:%{epoch}:}%{version}-%{release}
@@ -45,7 +42,6 @@ packages for all current up-to-date kernels into the buildroot to build
 kmods against them.
 
 %files kerneldevpkgs-current
-%defattr(-,root,root,-)
 %doc .tmp/current/README
 
 %prep
@@ -74,18 +70,16 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-
 %files
-%defattr(-,root,root,-)
 %{_bindir}/*
 %{_datadir}/%{name}/
 
 
 
 %changelog
+* Mon Sep 04 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:27-0.1
+- bump for 27
+
 * Sat Mar 18 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:26-0.4
 - rebuild for kernel 4.11.0-0.rc2.git2.2.fc26
 
