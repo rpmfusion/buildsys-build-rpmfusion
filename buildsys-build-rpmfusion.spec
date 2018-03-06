@@ -2,7 +2,7 @@
 
 Name:           buildsys-build-%{repo}
 Epoch:          10
-Version:        27
+Version:        28
 Release:        0.1
 Summary:        Tools and files used by the %{repo} buildsys 
 
@@ -77,6 +77,9 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
+* Tue Mar 06 2018 Nicolas Chauvet <kwizart@gmail.com> - 10:28-0.1
+- Bump for 28
+
 * Mon Sep 04 2017 Nicolas Chauvet <kwizart@gmail.com> - 10:27-0.1
 - bump for 27
 
