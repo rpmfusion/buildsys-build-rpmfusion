@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          10
 Version:        30
-Release:        0.1
+Release:        1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 License:        MIT
@@ -77,6 +77,9 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
+* Wed Apr 10 2019 Leigh Scott <leigh123linux@googlemail.com> - 10:30-1
+- rebuild for kernel 5.0.5-300.fc30
+
 * Thu Aug 23 2018 Leigh Scott <leigh123linux@googlemail.com> - 10:30-0.1
 - Bump for 30
 
