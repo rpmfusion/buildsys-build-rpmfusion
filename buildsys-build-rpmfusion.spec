@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          11
 Version:        30
-Release:        1.%{?dist}
+Release:        1%{?dist}
 Summary:        Tools and files used by the %{repo} buildsys 
 
 License:        MIT
