@@ -1,7 +1,7 @@
 %define repo rpmfusion
 
 Name:           buildsys-build-%{repo}
-Epoch:          10
+Epoch:          11
 Version:        30
 Release:        1
 Summary:        Tools and files used by the %{repo} buildsys 
