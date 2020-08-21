@@ -29,4 +29,4 @@ rm clog
 rfpkg push
 branch=$(git rev-parse --abbrev-ref HEAD)
  [ $branch == "master" ] && branch=rawhide
-rfpkg build --target ${branch}-free
+rfpkg build --target ${branch}-free-multilibs
