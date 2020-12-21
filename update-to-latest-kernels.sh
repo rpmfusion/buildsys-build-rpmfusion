@@ -18,7 +18,7 @@ if [[ ! $(rpmdev-packager) ]] ; then
 fi
 
 # update spec file
-rpmdev-bumpspec -c "- rebuild for kernel ${1}" *.spec
+rpmdev-bumpspec -D -c "- rebuild for kernel ${1}" *.spec
 # update buildsys-build-rpmfusion-kerneldevpkgs-current
 print_kernellist ${1} > buildsys-build-rpmfusion-kerneldevpkgs-current
 
