@@ -77,7 +77,7 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
-* Mon Dec 21 14:44:14 CET 2020 Nicolas Chauvet <kwizart@gmail.com> - 11:30-6
+* Mon Dec 21 2020 Nicolas Chauvet <kwizart@gmail.com> - 11:30-6
 - rebuild for kernel 4.18.0-240.el8
 
 * Thu Jun 25 2020 Leigh Scott <leigh123linux@gmail.com> - 11:30-5
