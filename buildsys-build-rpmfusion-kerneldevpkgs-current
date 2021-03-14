@@ -1,4 +1,4 @@
-4.16.2-300.fc28
-4.16.2-300.fc28smp
-4.16.2-300.fc28PAE
-4.16.2-300.fc28lpae
+default
+defaultsmp
+defaultPAE
+defaultlpae
