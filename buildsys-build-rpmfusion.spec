@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          11
 Version:        34
-Release:        0.2
+Release:        1
 Summary:        Tools and files used by the %{repo} buildsys 
 
 License:        MIT
@@ -77,6 +77,9 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
+* Sat Apr 24 2021 Leigh Scott <leigh123linux@gmail.com> - 11:34-1
+- rebuild for kernel 5.11.12-300.fc34
+
 * Thu Mar 04 2021 Leigh Scott <leigh123linux@gmail.com> - 11:34-0.2
 - rebuild for kernel 5.11.2-300.fc34
 
