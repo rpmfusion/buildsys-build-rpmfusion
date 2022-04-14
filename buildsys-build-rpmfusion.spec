@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          11
 Version:        35
-Release:        0.3
+Release:        0.4%{?dist}
 Summary:        Tools and files used by the %{repo} buildsys 
 
 License:        MIT
@@ -77,6 +77,9 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
+* Thu Apr 14 2022 Nicolas Chauvet <kwizart@gmail.com> - 11:35-0.4
+- Restore dist tag
+
 * Wed Apr 06 2022 Nicolas Chauvet <kwizart@gmail.com> - 11:35-0.3
 - Bump for el9
 
