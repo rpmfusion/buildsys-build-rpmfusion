@@ -3,7 +3,7 @@
 Name:           buildsys-build-%{repo}
 Epoch:          11
 Version:        30
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Tools and files used by the %{repo} buildsys 
 
 License:        MIT
@@ -77,6 +77,9 @@ sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
 
 
 %changelog
+* Sun May 15 2022 Nicolas Chauvet <kwizart@gmail.com> - 11:30-9
+- rebuild for kernel 4.18.0-372.9.1.el8
+
 * Fri Nov 19 2021 Nicolas Chauvet <kwizart@gmail.com> - 11:30-8
 - rebuild for kernel 4.18.0-348.el8
 
