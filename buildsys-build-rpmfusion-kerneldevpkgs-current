@@ -1,4 +1,4 @@
-default
-defaultsmp
-defaultPAE
-defaultlpae
+5.14.0-162.6.1.el9_1
+5.14.0-162.6.1.el9_1smp
+5.14.0-162.6.1.el9_1PAE
+5.14.0-162.6.1.el9_1lpae
