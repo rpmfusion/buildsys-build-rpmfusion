@@ -56,18 +56,18 @@ echo nothing to build
 
 %install
 rm -rf $RPM_BUILD_ROOT .tmp/
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/%{name} $RPM_BUILD_ROOT/%{_bindir} .tmp/newest .tmp/current
+mkdir -p %{buildroot}%{_datadir}/%{name} %{buildroot}%{_bindir} .tmp/newest .tmp/current
 
 # install the stuff we need
-install -p -m 0755 %{SOURCE2}  $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
+install -p -m 0755 %{SOURCE2}  %{buildroot}%{_bindir}/%{name}-kerneldevpkgs
 install -p -m 0644 %{SOURCE5}  .tmp/current/README
-ln -s kerneldevpkgs-current $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-newest
-install -p -m 0644 %{SOURCE11} $RPM_BUILD_ROOT/%{_datadir}/%{name}/kerneldevpkgs-current
+ln -s kerneldevpkgs-current %{buildroot}%{_datadir}/%{name}/kerneldevpkgs-newest
+install -p -m 0644 %{SOURCE11} %{buildroot}%{_datadir}/%{name}/kerneldevpkgs-current
 
 
 # adjust default-path
 sed -i 's|^default_prefix=.*|default_prefix=%{_datadir}/%{name}/|'  \
- $RPM_BUILD_ROOT/%{_bindir}/%{name}-kerneldevpkgs
+ %{buildroot}%{_bindir}/%{name}-kerneldevpkgs
 
 
 %files
